@@ -1,24 +1,4 @@
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="header_logo">
-                <img src="https://png.pngtree.com/png-clipart/20220903/ourmid/pngtree-chef-restaurant-logo-png-image_6136204.png" alt="Logo.." />
-            </div>
-
-            <div className="header_nav">
-                <ul>
-                    <li>About</li>
-                    <li>Contact Us</li>
-                    <li>Sign In</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const restaurants = [{
+const RESTAURANT_DATA = [{
     "info": {
         "id": "19902",
         "name": "Radha Krishna Pure Veg(Hinjewadi)",
@@ -1101,44 +1081,4 @@ const restaurants = [{
 }
 ]
 
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="Body_search">
-                <input type="text" placeholder="Search..." />
-                <button className="body_search_btn">
-                    Submit
-                </button>
-            </div>
-
-            <div className="res-container">
-                {restaurants?.map(restaurant => <Restaurant resObj={restaurant} key={restaurant?.info?.id} />)}
-            </div>
-        </div>
-    )
-}
-
-const Restaurant = (props) => {
-    const { resObj } = props;
-    const { name, avgRating, cuisines, cloudinaryImageId, areaName } = resObj.info;
-    return (
-        <div className="restaurant">
-            <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="restaurant" className="restaurant-img" />
-            <div>
-                <h3>{name}</h3>
-                <p>⭐ {avgRating} </p>
-                <p> {cuisines.join(", ")} </p>
-                <p>{areaName}</p>
-            </div>
-        </div>
-    )
-}
-
-const App = () => (
-    <div className="app">
-        <Header />
-        <Body />
-    </div>
-)
-
-export default App; 
+export default RESTAURANT_DATA; 
