@@ -1,6 +1,13 @@
 import { HEADER_LOGO } from "../utils/constants";
+import { useState } from "react";
 
 const Header = () => {
+    const [auth, setAuth] = useState(true);
+
+    const handleAuth = () => {
+        setAuth(!auth);
+    };
+
     return (
         <div className="header">
             <div className="header_logo">
@@ -11,12 +18,12 @@ const Header = () => {
                 <ul>
                     <li>About</li>
                     <li>Contact Us</li>
-                    <li>Sign In</li>
                     <li>Cart</li>
+                    <li onClick={handleAuth}> {auth ? "Logout" : "Login"} </li>
                 </ul>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Header; 
+export default Header;

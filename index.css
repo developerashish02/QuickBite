@@ -71,5 +71,26 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
+}
+
+.top-reated {
+    margin-left: 1rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+.shimmer-card {
+    height: 250px;
+    width: 250px;
+    background-color: lightgray;
+}
+
+.shimmer-container {
+    margin: 4rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 
 }
