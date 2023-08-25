@@ -1,6 +1,8 @@
 import { HEADER_LOGO } from "../utils/constants";
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 const Header = () => {
     const [auth, setAuth] = useState(true);
 
@@ -16,8 +18,15 @@ const Header = () => {
 
             <div className="header_nav">
                 <ul>
-                    <li>About</li>
-                    <li>Contact Us</li>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact Us</Link>
+                    </li>
+                    <li>
+                        <Link to="/about">About</Link>
+                    </li>
                     <li>Cart</li>
                     <li onClick={handleAuth}> {auth ? "Logout" : "Login"} </li>
                 </ul>
