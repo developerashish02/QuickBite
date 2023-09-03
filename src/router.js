@@ -1,10 +1,12 @@
+import React, { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Error from "./components/Error";;
+import Error from "./components/Error";
 import App from "./App";
 import RestaurantDetail from "./components/RestaurantDetail";
+const Instamart = lazy(() => import("./components/Instamart"));
 
 export const router = createBrowserRouter([
     {
@@ -14,7 +16,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Body />
+                element: <Body />,
             },
             {
                 path: "/about",
@@ -26,7 +28,15 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/restaurant/:id",
-                element: <RestaurantDetail />
+                element: <RestaurantDetail />,
+            },
+            {
+                path: "/instamart",
+                element: (
+                    <Suspense>
+                        <Instamart />
+                    </Suspense>
+                ),
             },
         ],
     },
