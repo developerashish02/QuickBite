@@ -10,7 +10,7 @@ const Body = () => {
 
   const isOnline = useOnline();
 
-  console.log(isOnline);
+  console.log(restaurant, "All res");
 
   if (!isOnline) {
     return "oh check your internet connection ☹️";
@@ -21,19 +21,24 @@ const Body = () => {
   }
 
   return (
-    <div className="mx-4">
-      <div className="Body_search">
+    <div className="my-4">
+      <div className="my-6 flex justify-center">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search for restaurant and food"
           onChange={(e) => setSearch(e.target.value)}
+          className="px-4 outline-none border border-black text-base w-80 rounded-l-md"
         />
-        <button className="body_search_btn" onClick={handleSearchSubmit}>
+
+        <button
+          className="p-2 bg-yellow-300 border border-black rounded-r-md hover:bg-yellow-400 active:bg-yellow-500 transition ease-in-out duration-75 "
+          onClick={handleSearchSubmit}
+        >
           Submit
         </button>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-8 mt-4 ">
+      <div className="flex flex-wrap justify-center gap-8 mt-8 ">
         {filterRestaurant?.map((restaurant) => (
           <Link
             to={"/restaurant/" + restaurant?.info?.id}
